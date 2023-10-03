@@ -1,0 +1,15 @@
+  .not-started {
+    background-color: #DDDDDD;
+  }
+  
+  .started {
+    background-color: #3498DB;
+  }
+  
+  .cooked {
+    background-color: #2ECC71;
+  }
+
+  .served{
+    background-color: orange;
+  }

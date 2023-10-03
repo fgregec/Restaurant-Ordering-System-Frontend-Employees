@@ -1,0 +1,29 @@
+<div *ngIf="orders">
+    <div *ngFor="let order of orders">
+        <div class="m-5">
+            <mat-expansion-panel class="{{getStateColor(order.orderStatus ? order.orderStatus:'')}}">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        OrderId: {{order.orderId}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <div>
+                            Placed For: {{formatDate(order.placedFor ? order.placedFor:'')}}
+                        </div>
+                        <div class="m-5">
+                            Number of People: {{order.numberOfPeople}}
+                        </div>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div *ngFor="let item of order.menuItems">
+                    <div *ngIf="item.menuItem">
+                        Ordered item: {{item.menuItem.name}}  
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <button class="btn btn-warning" *ngIf="order.orderStatus == '2'" (click)="updateStatus('4', order.orderId ? order.orderId:'')">SERVE</button>
+                </div>                
+            </mat-expansion-panel>
+        </div>
+    </div>
+</div>

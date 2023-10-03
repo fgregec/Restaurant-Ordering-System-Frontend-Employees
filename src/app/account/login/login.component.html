@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-center align-items-center m-5">
+    <div>
+        <form [formGroup] = "loginForm" (ngSubmit)="login()">
+            <label>Email</label>
+            <input formControlName="email" type="text" name="email" id="email" class="form-control" required>
+            <label>Password</label>
+            <input formControlName="password" type="password" name="password" id="password" class="form-control" required>
+            <div class="d-flex justify-content-center align-items-center">
+                <button type="submit" class="btn btn-primary m-2" [disabled]="!loginForm.valid">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+

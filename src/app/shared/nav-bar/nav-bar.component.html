@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="d-flex container-fluid">
+      <div>
+        <img src="./assets/logo.png" style="background-size: cover; width:150px; height: 150px;" alt="">
+      </div>
+      <div class="">
+        <div>
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="d-flex">
+        <button class="btn btn-secondary btn-lg" *ngIf="employee" (click)="logout()">LOGOUT</button>
+        <button class="btn btn-secondary btn-lg" *ngIf="!employee" (click)="redirectToLogin()">LOGIN</button>
+      </div>
+    </div>
+  </nav>

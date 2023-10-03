@@ -1,0 +1,34 @@
+<div *ngIf="orders">
+    <div *ngFor="let order of orders">
+        <div class="m-5">
+            <mat-expansion-panel class="{{getStateColor(order.orderStatus ? order.orderStatus:'')}}">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        OrderId: {{order.orderId}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Placed For: {{formatDate(order.placedFor ? order.placedFor:'')}}
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div *ngFor="let item of order.menuItems">
+                    <div *ngIf="item.menuItem">
+                        Ordered item: {{item.menuItem.name}}
+                        <div *ngIf="item.menuItem.removedIngredients">
+                            <div *ngIf="item.menuItem.removedIngredients.length > 0">
+                                <div>
+                                    <div *ngIf="item.removedIngredients">
+                                        <mat-chip *ngFor="let ingredient of item.menuItem.removedIngredients">{{ingredient.name}}</mat-chip>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>              
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center flex-row">
+                    <button class="btn btn-primary mx-2" (click)="updateStatus('3', order.orderId ? order.orderId:'')" *ngIf="order.orderStatus == '0'">START PREPARING</button>
+                    <button class="btn btn-danger mx-2" (click)="updateStatus('2', order.orderId ? order.orderId:'')" *ngIf="order.orderStatus == '3'">FINISH ORDER</button>
+                </div>
+            </mat-expansion-panel>
+        </div>
+    </div>
+</div>
