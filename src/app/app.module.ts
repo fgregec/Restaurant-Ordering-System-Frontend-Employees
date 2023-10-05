@@ -18,6 +18,7 @@ import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { WaiterComponent } from './dashboard/waiter/waiter.component';
 import { JwtInterceptor } from './jwt.interceptor';
 import { ToastrModule } from 'ngx-toastr';
+import { ManagerComponent } from './dashboard/manager/manager.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ToastrModule } from 'ngx-toastr';
     DashboardComponent,
     ChefComponent,
     NavBarComponent,
-    WaiterComponent
+    WaiterComponent,
+    ManagerComponent
   ],
   imports: [
     BrowserModule,

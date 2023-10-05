@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { AllOrdersDto } from '../shared/models/Employee';
 
 @Injectable({
@@ -24,6 +24,10 @@ export class DashboardService {
     };
 
     return this.http.post(this.baseUrl + '/updatestatus', requestBody);
+  }
+
+  getManagerData(){
+    return this.http.get(`${this.baseUrl}/getmanagerdata`);
   }
 
 }
