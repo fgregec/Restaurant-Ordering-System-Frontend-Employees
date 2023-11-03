@@ -10,7 +10,7 @@ export class SignalRService {
 
   startConnection() {
     this.hubConnection = new HubConnectionBuilder()
-      .withUrl('http://localhost:5078/myhub') // Replace with your SignalR hub URL
+      .withUrl('http://localhost:5078/myhub') 
       .build();
 
     this.hubConnection.start().catch(err => console.error(err.toString()));
